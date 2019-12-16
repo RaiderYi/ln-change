@@ -1,0 +1,20 @@
+import math
+import pandas as pd
+
+
+data = pd.read_csv('C:\\Users\\Administrator\\Desktop\\1216\\data.csv')
+data = data.dropna()
+print(data)
+#对数据进行ln对数处理
+def ln_deal(x):#输入需要为list
+    y=[]
+    for i in range(0, len(x)):
+        y.append(math.log(x[i]))
+        print(math.log(x[i]))
+    return y
+ln_deal(data['cgdpo'])
+print('--------------------------------------------')
+ln_deal(data['cn'])
+print('--------------------------------------------')
+ln_deal(data['emp'])
+#ln_deal(data['FDI'])
